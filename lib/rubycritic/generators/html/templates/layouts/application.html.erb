@@ -1,34 +1,56 @@
 <!DOCTYPE html>
-<html>
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>RubyCritic</title>
+    <title>Ruby Critic - Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- StyleSheets -->
     <link href="<%= stylesheet_path(:application) %>" media="screen, projection, print" rel="stylesheet" type="text/css">
     <link href="<%= stylesheet_path(:'prettify.custom_theme') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="<%= stylesheet_path(:'bootstrap.min') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="<%= stylesheet_path(:'font-awesome.min') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
   </head>
+
   <body>
-    <header class="project-header group">
-      <div class="container">
-        <h1 class="logo"><a href="<%= file_path('overview.html') %>" class="logo-link">RubyCritic</a></h1>
-        <nav class="project-nav">
-          <a href="<%= file_path('overview.html') %>" class="project-nav-item">Overview</a>
-          <a href="<%= file_path('code_index.html') %>" class="project-nav-item">Code</a>
-          <a href="<%= file_path('smells_index.html') %>" class="project-nav-item">Smells</a>
-        </nav>
-      </div>
+    <header class="navbar navbar-default navbar-fixed-top">
+      <a href="#menu-toggle" class="btn btn-default hidden-lg visible-sm-* hidden-md visible-xs-* pull-left" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      <img src="<%= image_path('logo.png') %>" class="img-responsive" title="Ruby Critic Logo" >
     </header>
-    <div class="container">
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <aside id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li>
+            <a href="<%= file_path('overview.html') %>" class="active project-nav-item">
+              <img src="<%= image_path('overview.png') %>" title="Overview Icon">Overview
+            </a>
+          </li>
+          <li>
+            <a href="<%= file_path('code_index.html') %>" class="project-nav-item"><i class="fa fa-code"></i>Code</a>
+          </li>
+          <li>
+            <a href="<%= file_path('smells_index.html') %>" class="project-nav-item"><img src="<%= image_path('smell-ico.png') %>" title="Smells Icond">Smells</a>
+          </li>
+        </ul>
+      </aside>
+      <!-- /#sidebar-wrapper -->
+
       <%= yield %>
     </div>
-    <%= javascript_tag(:'jquery-2.1.0') %>
+
+    <!-- Javascripts -->
+    <%= javascript_tag(:'jquery.min') %>
     <%= javascript_tag(:'jquery.tablesorter') %>
     <%= javascript_tag(:'jquery.floatThead-v1.2.7') %>
     <%= javascript_tag(:'jquery.timeago-v1.4.1') %>
     <%= javascript_tag(:'highcharts.src-4.0.1') %>
     <%= javascript_tag(:'jquery.scrollTo-1.4.11') %>
     <%= javascript_tag(:'prettify-4-Mar-2013') %>
+    <%= javascript_tag(:'bootstrap.min') %>
     <%= javascript_tag(:application) %>
   </body>
 </html>
