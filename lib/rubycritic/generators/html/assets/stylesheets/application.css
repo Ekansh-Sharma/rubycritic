@@ -118,7 +118,10 @@ header{    max-height: 85px;
   text-decoration: none;
   color: #999999;padding:10px;
 }
-.sidebar-nav li a.active {border-left: 2px solid #9b111d;}
+.sidebar-nav li a.active {
+  border-left: 2px solid #9b111d;
+  color: #9b111d;
+}
 .sidebar-nav li a:hover {
   text-decoration: none;
   color: #fff;

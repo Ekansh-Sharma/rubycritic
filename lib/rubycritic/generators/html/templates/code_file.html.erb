@@ -18,37 +18,39 @@
   <div class="Content_Wrapper">
     <!-- code detail -->
     <div class="code-top-detail clearfix row">
-      <div class="col-md-4">
+      <div class="col-md-8">
         <div class="row">
-          <div class="col-md-2">
+          <div class="col-md-1">
             <div class="rating <%= @analysed_module.rating.to_s.downcase %> big">
               <%= @analysed_module.rating %>
             </div>
           </div>
-          <div class="code-statistics col-md-10">
-            <div class="col-md-6">
+          <div class="code-statistics col-md-11">
+            <div class="col-md-3">
               <small><%= @analysed_module.line_count %> lines of codes</small> <br/ >
               <small><%= @analysed_module.methods_count %> methods</small>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-3">
               <small><%= @analysed_module.complexity_per_method %> complexity/method</small> <br/ >
               <small><%= @analysed_module.churn %> loc/method</small>
+            </div>
+            <div class="col-md-3">
+              <small><%= @analysed_module.complexity %> complexity</small> <br/ >
+              <small><%= @analysed_module.duplication %> duplications</small>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-4">
         <div class="code-tabs">
           <ul class="nav nav-pills right-to-left">
-            <li class="active"><a href="#">code</a></li>
-            <li>
-              <a href="#" id="toggle-smells" class="smells-toggle-button button">
+            <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
+            <li class="active">
+              <a href="#" id="toggle-smells" class="toggle-button button">
                 <%= @analysed_module.smells_count %>
                 <%= @analysed_module.smells_count <= 1 ? 'smell' : 'smells' %>
               </a>
             </li>
-            <li><a href="#"><%= @analysed_module.complexity %> complexity</a></li>
-            <li><a href="#"><%= @analysed_module.duplication %> duplications</a></li>
           </ul>
         </div>
       </div>
