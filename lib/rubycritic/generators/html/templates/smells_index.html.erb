@@ -11,9 +11,9 @@
         <table id="js-index-table" class="table smells-index-table index-table sortable-table">
           <thead>
             <tr>
-              <th width="30%" class="table-header">Smell<span class="sort-type"></th>
-              <th width="65%" class="table-header">Locations<span class="sort-type"></th>
-              <th width="5%" class="table-header">Status<span class="sort-type"></th>
+              <th width="30%" class="table-header">Smell<span class="sort-type"></span></th>
+              <th width="65%" class="table-header">Locations<span class="sort-type"></span></th>
+              <th width="5%" class="table-header">Status<span class="sort-type"></span></th>
             </tr>
           </thead>
           <% @smells.each do |smell| %>
@@ -28,13 +28,15 @@
                   <% end %>
                 </ul>
               </td>
-              <ul class="nav nav-pills">
+              <td>
                 <% if @show_status %>
-                  <li role="presentation">
-                    <td class="centered-cell"><span class="status-<%= smell.status %> circled-text circle"><%= smell.status %></span></td>
-                  </li>
+                  <ul class="nav nav-pills">
+                    <li role="presentation">
+                      <td class="centered-cell"><span class="status-<%= smell.status %> circled-text circle"><%= smell.status %></span></td>
+                    </li>
+                  </ul>
                 <% end %>
-              </ul>
+              </td>
             </tr>
           <% end %>
         </table>

@@ -27,12 +27,16 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <small><%= @analysed_module.line_count %> lines of codes</small> <br/ >
-              <small><%= @analysed_module.methods_count %> methods</small>
+              <div><span class="metric"><%= @analysed_module.line_count %></span><small> lines of codes</small></div>
+              <div><span class="metric"><%= @analysed_module.methods_count %></span><small> methods</small></div>
             </div>
             <div class="col-md-3">
-              <small><%= @analysed_module.complexity_per_method %> complexity/method</small> <br/ >
-              <small><%= @analysed_module.churn %> loc/method</small>
+              <div><span class="metric"><%= @analysed_module.complexity_per_method %></span><small> complexity/method</small></div>
+              <div><span class="metric"><%= @analysed_module.churn %></span><small> loc/method</small></div>
+            </div>
+            <div class="col-md-3">
+              <div><span class="metric"><%= @analysed_module.complexity %></span><small> complexity</small></div>
+              <div><span class="metric"><%= @analysed_module.duplication %></span><small> duplications</small></div>
             </div>
             <div class="col-md-3">
               <small><%= @analysed_module.complexity %> complexity</small> <br/ >
