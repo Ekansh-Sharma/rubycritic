@@ -7,6 +7,10 @@ module RubyCritic
     include Virtus.model
 
     attribute :name
+    attribute :smells_count
+    attribute :file_location
+    attribute :file_name
+    attribute :line_count
     attribute :pathname
     attribute :smells, Array, default: []
     attribute :churn
@@ -17,6 +21,22 @@ module RubyCritic
 
     def path
       @path ||= pathname.to_s
+    end
+
+    def file_location
+      file_path[0...-1].join('/')
+    end
+
+    def file_name
+      file_path[-1]
+    end
+
+    def file_path
+      path.split('/')
+    end
+
+    def line_count
+      `wc -l "#{path}"`.strip.split(' ')[0].to_i
     end
 
     def cost
@@ -33,6 +53,10 @@ module RubyCritic
       else
         complexity.fdiv(methods_count).round(1)
       end
+    end
+
+    def smells_count
+      smells.count
     end
 
     def smells?
