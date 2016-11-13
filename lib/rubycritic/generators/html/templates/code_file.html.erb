@@ -17,7 +17,7 @@
   <!--End Page Title -->
   <div class="Content_Wrapper">
     <!-- code detail -->
-    <div class="code-top-detail clearfix">
+    <div class="code-top-detail clearfix row">
       <div class="col-md-4">
         <div class="row">
           <div class="col-md-2">
@@ -35,7 +35,6 @@
               <small><%= @analysed_module.churn %> loc/method</small>
             </div>
           </div>
-          <code class="prettyprint linenums lang-ruby file-code js-file-code"><%= yield %></code>
         </div>
       </div>
       <div class="col-md-8">
@@ -43,7 +42,7 @@
           <ul class="nav nav-pills right-to-left">
             <li class="active"><a href="#">code</a></li>
             <li>
-              <a href="#" id="js-toggle-smells" class="smells-toggle-button button">
+              <a href="#" id="toggle-smells" class="smells-toggle-button button">
                 <%= @analysed_module.smells_count %>
                 <%= @analysed_module.smells_count <= 1 ? 'smell' : 'smells' %>
               </a>
@@ -54,5 +53,7 @@
         </div>
       </div>
     </div>
+
+    <code class="prettyprint linenums lang-ruby file-code js-file-code"><%= yield %></code>
   </div>
 </div>

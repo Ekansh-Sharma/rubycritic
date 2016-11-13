@@ -368,22 +368,15 @@ header{    max-height: 85px;
 .success b {
   color: #197b30;
 }
-.alert {
-  padding-left: 50px;
-  font-size: 14px;
-  position: relative;
-}
+
 .errors {
-  background-image: url(../images/icon-alert.png);
   background-position: 10px 25px;
   background-repeat: no-repeat;
-  padding-left: 50px;
   margin-bottom: 5px;
   color: #8b8b8b;
   font-size: 14px;
 }
 .errors b {
-  color: #303030;
   font-size: 16px;
   font-weight: 400;
 }
@@ -436,3 +429,14 @@ header{    max-height: 85px;
   color: #fff;
   margin-top: 11px;
 }
+
+.smells {
+  position: relative;
+  white-space: normal;
+}
+.smells .heading { background-color: #F8AE60; }
+.smells .description { background-color: #FBE5BE; }
+.smells .fa-warning { color: #f57e00; }
+.smells span { margin-left: 20px; }
+.smells a { color: white; }
+.smells a:hover { color: #337ab7; }
