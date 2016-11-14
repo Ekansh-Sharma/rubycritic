@@ -5,17 +5,17 @@
     </div>
     <!--End Page Title -->
     <div class="Content_Wrapper">
-      <table class="table code">
+      <table class="table code" id="codeTable">
         <thead>
           <tr>
             <% unless Config.suppress_ratings %>
-              <th width="10%">Rating</th>
+              <th width="10%" class="table-header">Rating<span class="sort-type"></span></th>
             <% end %>
-            <th width="50%">Name</th>
-            <th width="10%">Churn</th>
-            <th width="10%">Complexity</th>
-            <th width="10%">Duplication</th>
-            <th width="10%">Smells</th>
+            <th width="50%" class="table-header">Name<span class="sort-type"></span></th>
+            <th width="10%" class="table-header">Churn<span class="sort-type"></span></th>
+            <th width="10%" class="table-header">Complexity<span class="sort-type"></span></th>
+            <th width="10%" class="table-header">Duplication<span class="sort-type"></span></th>
+            <th width="10%" class="table-header">Smells<span class="sort-type"></span></th>
           </tr>
         </thead>
         <tbody>

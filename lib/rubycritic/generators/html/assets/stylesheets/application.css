@@ -443,3 +443,14 @@ header{    max-height: 85px;
 .smells span { margin-left: 20px; }
 .smells a { color: white; }
 .smells a:hover { color: #337ab7; }
+
+.table-header {
+  cursor: pointer;
+}
+
+.table-header-asc:after {
+    content: '\00A0\2191';
+}
+.table-header-desc:after {
+    content: '\00A0\2193';
+}
