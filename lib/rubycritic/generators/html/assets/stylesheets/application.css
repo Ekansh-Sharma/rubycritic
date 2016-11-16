@@ -121,7 +121,11 @@ header {
 .Maroon_Color h3:after{border-left-color:#B31F27}
 .Maroon_Color .list-inline h4 {color:#B31F27;}
 
-.Summary_Content .list-inline {text-align:right;margin-top:10px;pading-right:0;}
+.Summary_Content .list-inline {
+  text-align:center;
+  margin-top:10px;
+  pading-right:0;
+}
 .Summary_Content .list-inline span {color:#A4A4A4}
 #wrapper.toggled #page-content-wrapper {
   position: absolute;
